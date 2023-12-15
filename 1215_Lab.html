@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Styled Buttons</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    #jstext {
+      text-align: center;
+    }
+
+    .buttonContainer {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      padding: 20px;
+    }
+
+    input{
+      padding: 15px 20px;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      cursor: pointer;
+      transition: transform 0.2s ease-in-out;
+    }
+
+
+    /* Assigning distinct colors to each button */
+    #alertButton1 {
+      background-color: #4c5b6c;
+
+    }
+
+    #alertButton2 {
+      background-color: #697d85;
+
+    }
+
+    #colorButtonGreen {
+      background-color: #9fa4a3;
+      
+    }
+
+    #colorButtonOrange {
+      background-color: #918981;
+      
+    }
+
+    #colorButtonReset{
+      background-color: #d0cdc9;
+      
+    }
+
+    /* Hover effect for the buttons */
+    .button:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</head>
+
+<body>
+
+    <h1 style="text-align: center;">Interactive Buttons</h1>
+
+  <div class="buttonContainer">
+    <input type = "button" id = "alertButton1" value = "1st button" onClick = "alert(num1)">
+    <input type = "button" id = "alertButton2" value = "2st button" onClick = "alert(num2)">
+    <input type = "button" id = "colorButtonGreen" value = "gray" onClick = "document.body.style.backgroundColor = '#9fa4a3';">
+    <input type = "button" id = "colorButtonOrange" value = "brown" onClick = "document.body.style.backgroundColor = '#918981';">
+    <input type = "button" id = "colorButtonReset" value = "Reset BG Color" onClick = "alert('Reset Background Color'); document.body.style.backgroundColor = '#f4f4f4';">
+
+  </div>
+
+  <script>
+
+
+    var number1;
+    number1 = window.prompt("Enter first integer");
+    
+    var number2;
+    number2 = window.prompt("Enter second integer");
+
+    var num1 = parseInt(number1);
+    var num2 = parseInt(number2);
+   
+    if(number1>number2){
+        document.body.style.backgroundColor = 'lightblue';
+        document.writeln('<p id="jstext">' + number1+">"+number2 + '</p>');
+    }else if(number1<number2){
+        document.body.style.backgroundColor = 'orange';
+        document.writeln('<p id="jstext">' + number1+"<"+number2 + '</p>');
+    }else{
+        document.body.style.backgroundColor = 'lightyellow';
+        document.writeln('<p id="jstext">' + number1+"="+number2 + '</p>');
+    }
+
+
+
+  </script>
+
+</body>
+
+</html>
